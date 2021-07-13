@@ -1,7 +1,7 @@
 function expressionCalculator(expr) {
   if (checkBrackets(expr) !== 0) {
     throw "ExpressionError: Brackets must be paired";
-  } else if (checkZiro(expr) == 0) {
+  } else if (checkZero(expr) == 0) {
     throw "TypeError: Division by zero.";
   } else {
     let result = new Function("return " + expr.replace(/\s/g, ""));
@@ -22,7 +22,7 @@ function checkBrackets(expr) {
   }
   return res;
 }
-function checkZiro(expr) {
+function checkZero(expr) {
   let arrExpr = expr.replace(/\s/g, "");
   let arrExprNew = arrExpr.split("");
   for (let i = 0; i < arrExprNew.length; i++) {
